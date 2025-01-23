@@ -1,0 +1,87 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body { 
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 44px;
+
+    background-color: rgb(255, 158, 174);
+    /* text-align center; */
+
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    background-color: rgb(164, 234, 243);
+    padding: 20px;
+    position: fixed;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+}
+
+main {
+    padding: 20px;
+    padding-top: 160px;
+    /* for 4 position: top right bottom left */
+    padding: 160px 20px 20px 20px;
+
+    /* combined left and right = 3 positions */
+    padding: 160px 20px 20px;
+}
+
+main article p {
+    max-width: 65ch;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+footer { 
+    padding: 20px;
+}
+
+.fancy-button {
+
+    background-color: mediumpurple;
+    padding: 20px 15px;
+    border-radius: 10px;
+    border: 1px solid indigo;
+    box-shadow: 2px 2px 5px rgba(59, 0, 101, 0.224);
+    font-weight: bold;
+    color: white;
+}
+
+.fancy-button:hover {
+    background-color: dodgerblue;
+}
+
+
+input[type=text],
+input[type=password], 
+textarea {
+    display: block;
+    margin-bottom: 20px;
+    width: 280px;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+}

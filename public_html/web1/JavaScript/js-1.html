@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 1
+    </title>
+</head>
+<body>
+    <h1>JavaScript Demo 1</h1>
+    <button id="loader" onclick="loadStuff()">Click Me >:)</button>
+    <main id="content">
+        <p>Hola</p>
+        <img scr="https://i.pinimg.com/564x/fc/a3/cd/fca3cd41c8f5aecb82d184b8629e1ce3.jpg">
+    </main>
+    <script>
+        alert("Hello World :3")
+        console.log("Page loaded successfully!")
+
+        /**
+         * Variables
+         */
+
+        //  dynamic variable "let"
+
+        let myName = "Rachelle";
+
+        // a constant variable "const"
+        const pi = 3.141592265;
+
+        // Math operators: + = / *
+
+        console.log("PI x 7 = " + pi * 7);
+
+        // Concatenate Strings (text data) 
+        // with other Strings or dynamic data with +
+
+        /**
+         * F u n c t i o n s
+         */
+
+         function eatCupcakes() {
+            alert("Yummy 🧁")
+         }
+
+         eatCupcakes();
+
+        //  New ES6 Function
+
+        let makeCupcakes = () => {
+            console.log("adding ingredients... and bake: ")
+
+         };
+
+        const myContainer = document.getElementById("content");
+        let myAudio = new Audio('sounds/dogbark.mp3');
+
+        myAudio
+
+
+        function loadStuff() {
+            myAudio.play();
+            myContainer.innerHTML = '<p>Hola</p><img scr="https://i.pinimg.com/564x/fc/a3/cd/fca3cd41c8f5aecb82d184b8629e1ce3.jpg">';
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 | My Character</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Judson:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+    
+    <div id="panel">click here</div>
+    <h1>Sky Dragon</h1>
+    <h2>Celestia</h2>
+    <img src="./img/sit-down-pose.svg" alt="">
+    <p>My character is a sky dragon named Celestia. She lives on an unknown island in the sky called HighPeak. One day, however, she falls off the island and finds herself stranded on a cloud, a thousand meters below. As a young sky dragon, she's not yet able to fly back up. To return to her home, she must use her magical water and wind powers to create and stack clouds, building her way back up to HighPeak. But the journey is not easy. The closer she gets to the island, the more obstacles she'll face.</p>
+
+
+    <h3>I was drawn like this!</h3>
+
+    <img class="screenshots" src="./img/screenshot.png" alt="">
+
+    <btn>
+    <button id="btn" onclick="top.location.href = '../project3/index.html'">Play The Game!</button>
+    </btn>
+
+    <script>
+        const panel = document.getElementById("panel");
+        const sound = new Audio("sounds/entrance.mp3")
+
+        panel.onclick = function() {
+            this.classList.toggle("slide-up");
+            sound.play();
+        }
+    </script>
+</body>
+</html>

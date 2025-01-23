@@ -1,0 +1,70 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background-color: crimson;
+        display: flex;
+        /* Makes the body a flex container */
+        flex-direction: column;
+        /* Algins children in a vertical column */
+        align-items: center;
+        /* Centers content horizontally */
+        height: 100vh;
+        /* Takes up full viewpoint height */
+        text-align: center;
+        /* Centers all text inside the body */
+        padding: 20px;
+        /* Adds padding around the body */
+}
+
+nav {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#container {
+    display: grid; 
+    /* Makes the container a grid */
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    /* Makes the grid take up full width of its parent */
+    max-width: 700px;
+    /* Limites the grid width to 1200px */
+    justify-items: center;
+    /* Centers grid items horizontally within each cell */
+
+}
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
