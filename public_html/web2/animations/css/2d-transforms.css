@@ -1,0 +1,50 @@
+/* 2D Transform */
+
+#blackcat, #kittenplay, #car {
+    transition: transform 0.5s;
+}
+
+#blackcat:hover {
+    transform: rotate(45deg);
+}
+
+#kittenplay:hover {
+    transform: scale(2);
+}
+
+#car {
+    width: 300px;
+    height: auto;
+}
+
+.move-right {
+    transform: translateX(900px);
+}
+
+/* Solution */
+
+article {
+    position: relative;
+}
+
+article section {
+    position: absolute;
+    width: 500px;
+    top: 2.44em;
+    left: -515px;
+    background-color: rgba(255, 134, 249, 0.843);
+    transition: transform 0.5s;
+
+}
+
+article section nav {
+    width: 530px;
+    text-align: right;
+    background-color: rgb(255, 134, 249);
+    padding: 0.5em;
+    
+}
+
+.visible {
+    transform: translateX(515px);
+}

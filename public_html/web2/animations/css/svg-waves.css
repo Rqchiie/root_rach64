@@ -1,0 +1,50 @@
+header {
+    overflow: hidden;
+}
+
+header svg {
+    width: 140vw;
+}
+
+.move-right{
+    transform: translateX(70vw);
+  }
+
+.st0{fill:#F1E5E3;}
+
+.st1{fill:#E9B3D3;}
+
+.st2{fill:#EECAE0;}
+
+.st3{fill:#F1BACE;}
+
+.st4{fill:#F2CED8;}
+
+/* animation styles */
+
+
+#purple-pink-2{
+    animation: wavemaker 38s ease-in-out infinite alternate-reverse;
+}
+  
+#light-pink-2{
+    animation: wavemaker 30s ease-in-out infinite alternate;
+}
+  
+#red-pink-4{
+    animation: wavemaker 18s ease-in-out infinite alternate-reverse;
+}
+  
+#pastel-pink-5{
+    animation: wavemaker 12s ease-in-out infinite alternate;
+}
+  
+@keyframes wavemaker {  
+0% {
+    transform: translateX(-4vw);
+}
+100% {
+    transform: translateX(-10vw);
+}
+    
+}

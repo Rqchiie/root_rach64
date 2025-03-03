@@ -1,0 +1,113 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(16, 16, 16);
+}
+
+/* Navbar styles */
+header {
+  position: fixed; /* Keeps the navbar fixed at the top */
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(16, 16, 16);
+  z-index: 1000; /* Ensure navbar is above the banner */
+  padding: 10px 10px;
+  width: 100%; /* Ensures navbar takes the full width */
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-list li {
+  margin-left: 20px; /* Space between menu items */
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white; /* Text color for the nav items */
+  font-family: 'Bebas Neue', serif;
+  font-size: 2em; /* Font size */
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  text-decoration:underline;
+}
+
+/* Style for the banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  background: url('../img/bw-building.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+/* Style for the title */
+.title {
+  position: absolute;
+  bottom: -17px; 
+  left: 20px; 
+  font-family: 'Bebas Neue', serif;
+  font-size: 7em; 
+  color: white;
+  padding: 10px;
+  text-shadow: 3px 3px 5px black;
+}
+
+#intro section {
+  padding: 30px;
+}
+
+#intro p {
+  font-family: 'Bebas Neue', serif;
+  font-size: 2.5em;
+  color: rgb(255, 255, 255);
+  max-width: 100%;
+  text-align: center;
+  padding: 10px;
+  padding-top: 70px;
+}
+
+/* Make the banner responsive */
+@media screen and (max-width: 430px) {
+  .banner {
+    height: 500px; /* Adjust banner height for smaller screens */
+    padding-top: 60px; /* Adjust margin for navbar on smaller screens */
+  }
+
+  .title {
+    font-size: 5em; /* Adjust title size for smaller screens */
+    bottom: 5px; /* Reduce bottom margin */
+    left: 5px; /* Reduce left margin */
+  }
+
+  h3 {
+    font-size: 1.5em;
+    max-width: 100%;
+  }
+
+  #intro p {
+    font-size: 2em; /* Adjust paragraph font size */
+    max-width: 100%; /* Ensure paragraph takes full width */
+  }
+
+
+}

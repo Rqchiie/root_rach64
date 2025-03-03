@@ -1,0 +1,262 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D9BC9A; /* Background color of the body */
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between; /* Aligns logo and navbar to opposite sides */
+    align-items: center; /* Centers the content vertically */
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.243); /* Transparent black background */
+    position: fixed; /* Keeps header fixed at the top */
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000; /* Keeps header on top of other content */
+    width: 100%; /* Full width */
+}
+
+header .logo {
+    text-decoration: none;
+    font-size: 1.7em;
+    color: white;
+    font-family: 'Playfair', serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns navbar items to the right */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none; /* Removes bullet points from list items */
+}
+
+.nav-list li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white;
+    font-family: 'PlayFair Display', serif;
+    font-size: 1.3em;
+    padding: 15px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-list li a:hover {
+    background-color: rgb(52, 52, 52); /* Darkens background on hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+    display: none; /* Hide it by default */
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Banner Styles */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    background: url('../img/headphones.jpg') no-repeat center center/cover; /* Banner background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px; /* Adds space at the top */
+
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: black; 
+    width: 90%;
+    margin: 80px auto; /* Centers the line and gives margin top and bottom */
+}
+
+/* Title Styles */
+.title {
+    position: absolute;
+    bottom: -17px; /* Distance from the bottom */
+    left: 20px; /* Distance from the left */
+    font-family: 'Playfair Display', serif;
+    font-size: 7em;
+    color: white;
+    padding: 10px;
+    text-shadow: 3px 3px 10px black; /* Text shadow for better visibility */
+}
+
+/* Subheading Styles */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5em;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    text-align: left;
+    padding: 40px;
+    padding-top: 70px;
+}
+
+/* Paragraph Styles for Sections */
+#about p, 
+#mystory p, 
+#instruments-intro p, 
+#covers p,
+#artists-intro p {
+    font-family: 'Newsreader', serif;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#copyright p {
+    font-family: 'Newsreader', serif;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    max-width: 100%;
+    text-align: center;
+    padding: 40px;
+}
+
+
+/* My Story Section Layout */
+#mystory {
+    display: grid;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+#mystory p {
+    width: 70%;
+    margin: 0;
+}
+
+#mystory .images {
+    float: right;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#mystory .images figure {
+    width: 90%;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+#mystory .images img {
+    width: 100%;
+    box-shadow: 1px 2px 10px rgb(16, 16, 16); /* Adds shadow to images */
+}
+
+/* Responsive Styles */
+
+/* Styles for devices with a max-width of 768px (tablets and smaller screens) */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block; /* Show the hamburger */
+    }
+
+    .nav-list {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 68.5px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.243);
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list li {
+        padding: 15px;
+    }
+
+    /* Show menu when active */
+    .nav-list.active {
+        display: flex;
+    }
+
+    .banner {
+        height: 700px; /* Increases banner height on smaller screens */
+    }
+
+    .title {
+        font-size: 6em; /* Reduces title size */
+        bottom: 10px;
+        left: 10px;
+    }
+
+    h2 {
+        font-size: 4em; /* Reduces subheading size */
+        max-width: 100%;
+    }
+
+    #about p,
+    #mystory p,
+    #instruments-intro p,
+    #artists-intro p,
+    #copyright p {
+        font-size: 3.2em; /* Adjusts paragraph font size */
+        width: 100%; /* Ensures paragraphs take full width */
+    }
+
+    #mystory {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: flex-start;
+    }
+
+    #mystory .images {
+        width: 100%;
+        padding-top: 30px;
+        padding-left: 40px;
+    }
+}
+
+/* Styles for devices with a max-width of 480px (mobile screens) */
+@media (max-width: 480px) {
+    .banner {
+        height: 600px; /* Decreases banner height on mobile */
+    }
+
+    .title {
+        font-size: 5em; /* Reduces title size further */
+        bottom: 10px; 
+        left: 10px;
+    }
+
+    h2 {
+        font-size: 3em; /* Further reduces subheading size */
+        max-width: 100%;
+    }
+
+    #about p, 
+    #mystory p, 
+    #instruments-intro p,
+    #artists-intro p {
+        font-size: 1.5em; /* Adjusts paragraph font size for mobile */
+        max-width: 100%;
+    }
+
+    #copyright p {
+        font-size: 1.5em;
+        max-width: 100%;
+    }
+}

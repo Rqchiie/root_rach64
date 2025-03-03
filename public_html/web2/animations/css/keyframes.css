@@ -1,0 +1,58 @@
+#car {
+    width: 500px;
+    height: auto;
+}
+
+#car {
+    animation-name: drivingAround;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite ;
+  }
+  
+  @keyframes drivingAround {
+
+    0% {
+        transform: translateX(0px);
+    }
+
+    48% {
+        transform: translateX(600px);
+    } 
+
+    50% {
+        transform: rotateY(180deg) translateX(-600px);
+    }
+
+    98% {
+        transform: translateX(0px) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+  } 
+  
+  /* solution for 2d transform challenge*/
+  article {
+    position: relative;
+  }
+  article section {
+    position: absolute;
+    top: 2.44em;
+    width: 700px;
+    left: -700px;
+    padding: 0 1em 0.5em 0.5em;
+    background-color: rgba(16, 16, 16, 0.95);
+    transition: transform 0.5s;
+  }
+  article section nav {
+    width: 110%;
+    text-align: right;
+    background-color: rgba(16, 16, 16, 0.95);
+    padding: 0.5em;
+  }
+  
+  .visible {
+    transform: translateX(690px);
+  }
