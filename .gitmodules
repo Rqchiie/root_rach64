@@ -1,0 +1,3 @@
+[submodule "capython"]
+	path = capython
+	url = https://github.com/aspectratioed-tyler/capython.git
