@@ -33,13 +33,14 @@ header .logo {
 
 /* Navbar Styles */
 .navbar {
-    display: flex;
+    display: grid;
     justify-content: flex-end; /* Aligns navbar items to the right */
 }
 
 .nav-list {
-    display: flex;
+    display: grid;
     list-style: none; /* Removes bullet points from list items */
+    grid-auto-flow: column;
 }
 
 .nav-list li a {
@@ -214,7 +215,7 @@ h2 {
     #instruments-intro p,
     #artists-intro p,
     #copyright p {
-        font-size: 3.2em; /* Adjusts paragraph font size */
+        font-size: 2.2em; /* Adjusts paragraph font size */
         width: 100%; /* Ensures paragraphs take full width */
     }
 

@@ -87,6 +87,14 @@
     }
 }
 
+@media screen and (max-width: 768px)  {
+      #instruments {
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
 @media screen and (max-width: 480px) {
 
     #instruments {

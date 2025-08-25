@@ -1,0 +1,512 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #CFDD2E;
+}
+
+@font-face {
+    font-family: 'Dillan';
+    src: url('../fonts/Dillan.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+        display: flex;
+        justify-content: flex-end; /* Aligns logo and navbar to opposite sides */
+        align-items: center; /* Centers the content vertically */
+        background-color: #CFDD2E; /* Transparent black background */
+        position: fixed; /* Keeps header fixed at the top */
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000; /* Keeps header on top of other content */
+        width: 100%; /* Full width */
+        height: 60px;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns navbar items to the right */
+}
+
+
+ul {
+    padding: 30px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none; /* Removes bullet points from list items */
+}
+
+.nav-list li a {
+    text-decoration: none; /* Removes underline from links */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    padding: 10px;
+    transition: underline 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-list li a:hover {
+    text-decoration: underline;
+    transition: underline 0.3s ease;
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+    display: none; /* Hide it by default */
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+    color: white;
+    font-family: 'Dillan', sans-serif;
+    font-size: 15em;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+h3 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 27px;
+    text-align: center;
+}
+
+h4 {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    text-align: left;
+    padding: 30px;
+}
+
+h5 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;
+}
+
+#Titles {
+    margin: 10em;
+}
+
+#About {
+    background-color: #FF98C7;
+    padding: 8em;
+}
+
+#About p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding: 30px;
+}
+
+#Team {
+    background-color: #F98444;
+    padding: 5em;
+}
+
+#Team ul {
+    padding: 30px;
+    padding: 50px
+}
+
+#Team ul li {
+    display: grid;
+    place-items: center;
+    list-style-type: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+#Team p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+}
+
+#Myrole {
+    background-color: #6CCCEF;
+    padding: 4em;
+}
+
+#Myrole p {
+    padding: 30px;
+
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: left;
+}
+
+#Mywork {
+    background-color: white;
+    padding: 5em;
+}
+
+#Mywork h3 {
+    color: black;
+}
+
+#Mywork p {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 10px;
+    padding: 30px;
+    
+}
+
+.posts img {
+    height: 500px;
+    width: auto;
+}
+
+
+.post {
+    padding: 30px;
+    display: grid;
+    place-items: center;
+}
+
+.post img {
+ width: auto;
+}
+
+#Capyskill {
+    padding: 4em;
+
+}
+
+#Capyskill p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    padding: 10px;
+}
+
+.evidence {
+    padding: 30px;
+    display: grid;
+    place-items: center;
+}
+
+.evidence img {
+    height: 500px;
+    width: auto;
+}
+
+footer {
+    padding: 4em;
+}
+
+footer p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Media Queries for Tablet and Mobile Responsiveness */
+
+/* Large Screens (Desktop) - Default Layout */
+@media (max-width: 1440px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 15px 40px;
+    }
+
+    .nav-list li {
+        margin-left: 25px;
+    }
+
+    /* Posts Section */
+    .posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .posts img {
+        height: 500px;
+        width: auto;
+    }
+
+    .evidence img {
+        height: 400px;
+        width: auto;
+    }
+
+    /* Header Titles */
+    h1 {
+        font-size: 8em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3, h5 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+
+    /* Sections Padding */
+    #Titles, #About, #Team, #Myrole, #Mywork, #Capyskill {
+        padding: 6em;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1.4em;
+    }
+}
+
+/* Medium Screens (Tablet) */
+@media (max-width: 1024px) {
+
+    /* Navbar */
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .nav-list li {
+        margin-left: 15px;
+    }
+
+    .posts {
+        grid-template-columns: 1fr; /* 2 columns on tablets */
+    }
+
+    .posts img {
+        height: auto;
+        width: 100%;
+    }
+
+    .evidence img {
+        height: 300px;
+        width: auto;
+    }
+
+    /* Header Titles */
+    h1 {
+        font-size: 7em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3, h5 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    /* Sections Padding */
+    #Titles, #About, #Team, #Myrole, #Mywork, #Capyskill {
+        padding: 4em;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1.3em;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #32360266;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list li {
+        padding: 15px;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    /* Posts Section */
+    .posts {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        padding: 10px;
+    }
+
+    .posts img {
+        width: 100%;
+        height: auto;
+    }
+
+    .evidence img {
+        height: 280px;
+        width: auto;
+    }
+
+    /* Header Titles */
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3, h5 {
+        font-size: 1.1em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    /* Sections Padding */
+    #Titles, #About, #Team, #Myrole, #Mywork, #Capyskill {
+        padding: 7em;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1.2em;
+    }
+}
+
+/* Small Screens (Mobile Under 430px) */
+@media (max-width: 430px) {
+
+    /* Navbar adjustments */
+    .menu-toggle {
+        font-size: 1.8em; /* Adjust icon size for very small screens */
+    }
+
+    .nav-list {
+        top: 50px; /* Adjust for smaller header */
+        padding: 0; /* Remove padding */
+        width: 100%;
+    }
+
+    .nav-list li {
+        padding: 12px; /* Smaller padding */
+        font-size: 1.1em; /* Adjust font size */
+    }
+
+    /* Posts Section */
+    .posts {
+        grid-template-columns: 1fr; /* Keep it single column */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .posts img {
+        width: 100%; /* Ensure images fit */
+        height: auto;
+    }
+
+    .post img {
+        width: auto;
+        height: 500px;
+    }
+
+    .evidence img {
+        height: auto;
+        width: 300px;
+    }
+
+    /* Header Titles */
+    h1 {
+        font-size: 3em; 
+        margin: 0.5em 0;
+        text-align: center; 
+        line-height: 1.2; 
+    }
+
+    h2 {
+        font-size: 1.2em; 
+        margin: 0.5em 0; 
+        text-align: center; 
+        line-height: 1.3; 
+    }
+
+    h3, h5 {
+        font-size: 1.1em; 
+        margin: 0.5em 0; 
+        text-align: center; 
+    }
+
+    h4 {
+        font-size: 1em; 
+        margin: 0.5em 0; 
+        text-align: center; 
+    }
+
+    /* Sections Padding */
+    #About, #Team, #Myrole, #Mywork, #Capyskill {
+        padding: 2em; 
+        width: 100%;
+        margin: 0;
+    }
+
+    #Titles {
+        padding: 7em;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 1em; /* Smaller font size in footer */
+        text-align: center; /* Center-align the footer text */
+    }
+}

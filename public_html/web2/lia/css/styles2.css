@@ -1,0 +1,31 @@
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'FairPlay Display', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    background-color: #FBDDE9; 
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #D46688;
+}
+
+footer {
+    margin-top: auto;
+    padding: 10px;
+    color: #D46688; 
+    width: 100%;
+    text-align: center;
+}
