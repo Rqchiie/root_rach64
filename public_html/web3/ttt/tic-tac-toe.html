@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Bao</title>
+
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>TIC TAC BAO</h1>
+    </header>
+
+    <!-- Table area (steamer + decorations). #message is inside #table so it overlays the board. -->
+    <section id="table">
+      <!-- message overlay (hidden by default; JS toggles .hidden) -->
+      <div id="message" class="hidden" role="status" aria-live="polite"></div>
+
+      <!-- steamer (round board) -->
+      <div id="steamer">
+        <article id="grille">
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+          <div class="case"></div>
+        </article>
+      </div>
+
+      <!-- decorations (positioned around the steamer) -->
+      <img id="steamer-lid" src="img/steamer-cover.png" alt="Steamer Lid (cover)" />
+      <img id="chopsticks" src="img/chopsticks.png" alt="Chopsticks" />
+      <img id="dumplings" src="img/plate-dumplings.png" alt="Extra dumplings" />
+      <img id="sauce" src="img/soya.png" alt="Sauce dish" />
+      <img id="siumai-plate" src="img/plate-siumai.png" alt="Plate of siu-mai" />
+
+    </section>
+
+    <!-- controls -->
+    <section class="controls">
+      <nav>
+        <button id="replay">Jouer encore</button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

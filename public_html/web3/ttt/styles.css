@@ -1,0 +1,178 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Caveat Brush';
+  text-align: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #FFD5BF;
+}
+
+h1 {
+  font-family: 'Luckiest Guy';
+  font-size: 6vmin;
+  margin-bottom: 2rem;
+}
+
+/* TABLE container */
+#table {
+  position: relative;
+  width: 80vmin;
+  height: 80vmin;
+  display: grid;
+  place-items: center;
+}
+
+/* Message overlay */
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 120;
+  background: rgba(255, 255, 245, 0.98);
+  padding: 2.2rem 2.8rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  font-size: 3.2vmin;
+  white-space: nowrap;
+  text-align: center;
+}
+.hidden { display: none; }
+
+/* Steamer (main board) */
+#steamer {
+  width: 65vmin;
+  height: 65vmin;
+  background-image: url("img/steamer.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  z-index: 50;
+}
+
+/* Tic-tac-toe grid inside steamer */
+#grille {
+  width: 52vmin;
+  height: 52vmin;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  z-index: 60;
+}
+
+#grille .case {
+  border: 1px solid rgba(0,0,0,0.25);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.14s ease, background-color 0.14s;
+}
+
+#grille .case:hover {
+  background-color: rgba(100, 149, 237, 0.18);
+  transform: translateY(-3%);
+}
+
+/* --- Decorations (scaled + spaced) --- */
+#steamer-lid {
+  position: absolute;
+  left: -15vmin;
+  top: 5vmin;
+  width: 22vmin;
+  transform: rotate(-20deg);
+  z-index: 45;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+#chopsticks {
+  position: absolute;
+  right: -14vmin;
+  top: 12vmin;
+  width: 20vmin;
+  transform: rotate(-12deg);
+  z-index: 55;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+#dumplings {
+  position: absolute;
+  bottom: -8vmin;
+  left: 10vmin;
+  width: 15vmin;
+  z-index: 55;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
+}
+
+#sauce {
+  position: absolute;
+  bottom: 8vmin;
+  right: 10vmin;
+  width: 10vmin;
+  z-index: 55;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
+}
+
+/* 🍽️ Plate of siu-mai */
+#siumai-plate {
+  position: absolute;
+  left: -12vmin;
+  bottom: 10vmin;
+  width: 16vmin;
+  z-index: 55;
+  pointer-events: none;
+  transform: rotate(6deg);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+/* Replay button */
+.controls button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 2vmin;
+  border: none;
+  border-radius: 1rem;
+  background-color: #ff8c42;
+  color: white;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.controls button:hover {
+  background-color: #ff6f00;
+}
+
+/* Responsive tweaks */
+@media (min-width: 600px) {
+  h1 { font-size: 4vmin; }
+  #table { width: 72vmin; height: 72vmin; }
+  #steamer { width: 60vmin; height: 60vmin; }
+  #grille { width: 48vmin; height: 48vmin; }
+
+  #steamer-lid { left: -13vmin; top: 6vmin; width: 20vmin; }
+  #chopsticks { right: -12vmin; top: 12vmin; width: 18vmin; }
+  #siumai-plate { left: -10vmin; bottom: 8vmin; width: 17vmin; }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 3vmin; }
+  #table { width: 65vmin; height: 65vmin; }
+  #steamer { width: 55vmin; height: 55vmin; }
+  #grille { width: 45vmin; height: 45vmin; }
+
+  #steamer-lid { left: -12vmin; top: 5vmin; width: 18vmin; }
+  #chopsticks { right: -11vmin; top: 10vmin; width: 16vmin; }
+  #siumai-plate { left: -9vmin; bottom: 7vmin; width: 18vmin; }
+}
