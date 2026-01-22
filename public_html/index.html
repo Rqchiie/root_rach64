@@ -1,79 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachelle's Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rachelle's Site</title>
 
-    <style>
-      /* First example of a CSS rule */
-        a {
-            color: lavender;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        a:hover {
-          color: rgb(80, 11, 145);
-        }
-
-        body {
-          background-color: rgb(181, 146, 247);
-        }
-
-        h1 {
-          color: white;
-          font-family: Arial, Helvetica, sans-serif;
-          text-shadow: 2px 2px 4px rgb(80, 11, 145);
-        }
-
-        pre {
-          color: white;
-        }
-    </style>
-
+  <link rel="stylesheet" href="./css/styles.css">
+  
 </head>
 <body>
-    <h1>Welcome to Rachelle's Website :p</h1>
+  <header>
+    <h1>Rachelle</h1>
+    <p>Portfolio & Archive</p>
+  </header>
 
-    <h2>Sem 1</h2>
-    <p><a href="web1/">My Web 1</a></p>
-    <p><a href="./et1/index.html">My Emerging Tech 1</a></p>
-    <p><a href="./pc1/index.html">My Photography and Cinema 1</a></p>
+  <main>
+    <section>
+      <h2 data-number="01">Semester 1</h2>
+      <ul>
+        <li><a href="web1/"><span>Web 1</span></a></li>
+        <li><a href="et1/index.html"><span>Emerging Tech 1</span></a></li>
+        <li><a href="pc1/index.html"><span>Photography & Cinema 1</span></a></li>
+      </ul>
+    </section>
 
-    <h2>Sem 2</h2>
-    <p><a href="web2/index.html">My Web 2</a></p>
-    <p><a href="./capython/index.html">Capython</a></p>
-    
+    <section>
+      <h2 data-number="02">Semester 2</h2>
+      <ul>
+        <li><a href="web2/index.html"><span>Web 2</span></a></li>
+        <li><a href="capython/index.html"><span>Capython</span></a></li>
+      </ul>
+    </section>
 
-    <h2>Sem 3</h2>
-    <p><a href="./web3/index.html">My Web 3</a></p>
-    <p><a href="./mg1/index.html">Motion Graphics 1</a></p>
-   
-    
-    <p><a href="">Portfolio</a></p>
-    
-    <pre>           .               ,.
-          T."-._..---.._,-"/|
-          l|"-.  _.v._   (" |
-          [l /.'_ \; _~"-.`-t
-          Y " _(o} _{o)._ ^.|
-          j  T  ,--.  T  ]
-          \  l ( /-^-\ ) !  !
-           \. \.  "~"  ./  /c-..,__
-             ^r- .._ .- .-"  `- .  ~"--.
-              > \.                      \
-              ]   ^.                     \
-              3  .  ">            .       Y  -Row
- ,.__.--._   _j   \ ~   .         ;       |
-(    ~"-._~"^._\   ^.    ^._      I     . l
- "-._ ___ ~"-,_7    .Z-._   7"   Y      ;  \        _
-    /"   "~-(r r  _/_--._~-/    /      /,.--^-._   / Y
-    "-._    '"~~~>-._~]>--^---./____,.^~        ^.^  !
-        ~--._    '   Y---.                        \./
-             ~~--._  l_   )                        \
-                   ~-._~~~---._,____..---           \
-                       ~----"~       \
-                                      \</pre>
-    
+    <section>
+      <h2 data-number="03">Semester 3</h2>
+      <ul>
+        <li><a href="web3/index.html"><span>Web 3</span></a></li>
+        <li><a href="mg1/index.html"><span>Motion Graphics 1</span></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-number="★">Portfolio</h2>
+      <ul>
+        <li><a href="#"><span>Coming soon...</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Rachelle. All rights reserved.</p>
+  </footer>
 </body>
 </html>

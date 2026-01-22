@@ -1,108 +1,110 @@
+// --- ELEMENTS ---
+const cases = document.querySelectorAll(".case"); 
+const replayBtn = document.querySelector("#replay");
+const panneauMessage = document.querySelector("#message");
+const panneauMessageTexte = document.querySelector("#message-text");
+const panneauMessageImage = document.querySelector("#message-img");
 
-let cases = document.querySelectorAll(".case");
-let replayBtn = document.querySelector("#replay");
-let panneauMessage = document.querySelector("#message");
-let panneauMessageGagnant = document.querySelector("#message img");
+// NEW: Turn indicator
+const turnIndicator = document.createElement("p");
+turnIndicator.id = "turn";
+document.querySelector("#table").prepend(turnIndicator);
 
-let joueurX = true;
-let gagnant = '';
+// --- GAME STATE ---
+let joueurX = true; // true = Dumpling, false = Siu-Mai
+let roundCount = 0;
+let gameOver = false;
+
 const patrons = [
-    [0, 1, 2],
-    [0, 3, 6],
-    [0, 4, 8],
-    [1, 4, 7],
-    [2, 5, 8],
-    [2, 4, 6],
-    [3, 4, 5],
-    [6, 7, 8]
-
+  [0, 1, 2],
+  [0, 3, 6],
+  [0, 4, 8],
+  [1, 4, 7],
+  [2, 5, 8],
+  [2, 4, 6],
+  [3, 4, 5],
+  [6, 7, 8]
 ];
 
-for (let boite of cases) {
-    boite.active = true;
-    boite.addEventListener("click", function() {
-        if (boite.active) {
-            if (joueurX) {
-               // boite.innerText = "X";
-               boite.style.backgroundImage = "url('img/dumpling.png')";
-                joueurX = false;
-            }
-            else {
-              //  boite.innerText = "O";
-              boite.style.backgroundImage = "url('img/siumai.png')";
-                joueurX = true;
-            }
-        }
-        boite.active = false;
-        valide();
-    });
-
-}
-
-const valide = function () {
-
-        let victoire = false;
-    
-        let isTie = Array.from(cases).every(boite => !boite.active);
-            if (isTie && !victoire) {
-                showPanneauMessageGagnant("Partie nulle");
-            }
-
-    for (let patron of patrons) {
-       // let val1 = cases[patron[0]].innerText;
-       // let val2= cases[patron[1]].innerText;
-       // let val3= cases[patron[2]].innerText;
-       let val1 = cases[patron[0]].style.backgroundImage.slice(5,14);
-       let val2 = cases[patron[1]].style.backgroundImage.slice(5,14);
-       let val3 = cases[patron[2]].style.backgroundImage.slice(5,14);
-
-        if (val1 &&
-            val1 === val2 &&
-            val1 === val3) {
-                
-            let gagnant = "";
-            if (val1.includes("dumpling.png")) {
-                gagnant = "dumpling";
-                showPanneauMessageGagnant("Dumpling a gagné!");
-                
-            } else {
-                gagnant = "Dumpling";
-                showPanneauMessageGagnant("Dumpling a gagné!");
-            }
-    
-            for (let boite of cases) {
-                boite.active = false;
-            
-                }
-            }
-    }
-}
-
-
-replayBtn.addEventListener("click", function () {
-    for (let boite of cases) {
-        boite.active = true;
-        boite.style.backgroundImage = "";
-        joueurX = true;
-    }
-    hidePanneauMessageGagnant();
-});
-
-function showPanneauMessageGagnant(text) {
-    message.textContent = text;
-    message.classList.remove("hidden");
+// --- FUNCTIONS ---
+function updateTurn() {
+  if (!gameOver) {
+    turnIndicator.textContent = joueurX ? "Le tour du Dumpling!" : "Le tour du Siu-Mai!";
+  } else {
+    turnIndicator.textContent = "";
   }
+}
+
+function showPanneauMessageGagnant(text, imgPath) {
+  panneauMessageTexte.textContent = text;
+  if (imgPath) {
+    panneauMessageImage.src = imgPath;
+    panneauMessageImage.style.display = "block";
+  } else {
+    panneauMessageImage.style.display = "none";
+  }
+  panneauMessage.classList.remove("hidden");
+}
 
 function hidePanneauMessageGagnant() {
-    message.classList.add("hidden");
+  panneauMessage.classList.add("hidden");
+  panneauMessageImage.src = "";
+}
+
+function valide() {
+  let victoire = false;
+
+  for (let patron of patrons) {
+    let val1 = cases[patron[0]].style.backgroundImage;
+    let val2 = cases[patron[1]].style.backgroundImage;
+    let val3 = cases[patron[2]].style.backgroundImage;
+
+    if (val1 && val1 === val2 && val1 === val3) {
+      victoire = true;
+      gameOver = true;
+      if (val1.includes("dumpling.png")) {
+        showPanneauMessageGagnant("Dumpling a gagné!", "img/win-dumpling.png");
+      } else {
+        showPanneauMessageGagnant("Siu-Mai a gagné!", "img/win-siumai.png");
+      }
+    }
   }
 
-// Partie nulle:
-function replayGame() {
-    for (let boite of cases) 
-      boite.active = true;
-      boite.style.backgroundImage = "";
-    }
+  // Tie condition
+  if (!victoire && roundCount === 9) {
+    gameOver = true;
+    showPanneauMessageGagnant("Partie nulle");
+  }
 
-  // Hide overlay just in case
+  updateTurn();
+}
+
+// --- GAMEPLAY ---
+for (let boite of cases) {
+  boite.active = true;
+  boite.addEventListener("click", function () {
+    if (!boite.active || gameOver) return;
+
+    boite.style.backgroundImage = joueurX ? "url('img/dumpling.png')" : "url('img/siumai.png')";
+    boite.active = false;
+    roundCount++;
+    joueurX = !joueurX;
+    valide();
+  });
+}
+
+// --- REPLAY ---
+replayBtn.addEventListener("click", function () {
+  for (let boite of cases) {
+    boite.active = true;
+    boite.style.backgroundImage = "";
+  }
+  joueurX = true;
+  roundCount = 0;
+  gameOver = false;
   hidePanneauMessageGagnant();
+  updateTurn();
+});
+
+// --- INIT ---
+updateTurn();

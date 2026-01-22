@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 body {
   font-family: 'Caveat Brush';
   text-align: center;
@@ -15,8 +20,19 @@ body {
 
 h1 {
   font-family: 'Luckiest Guy';
-  font-size: 6vmin;
+  font-size: 11vmin;
   margin-bottom: 2rem;
+}
+
+#turn {
+  position: absolute;
+  bottom: -20vmin; /* adjust to place above steamer */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5vmin;
+  font-weight: bold;
+  color: #663300;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 /* TABLE container */
@@ -26,29 +42,43 @@ h1 {
   height: 80vmin;
   display: grid;
   place-items: center;
+  
 }
 
 /* Message overlay */
 #message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 120;
-  background: rgba(255, 255, 245, 0.98);
-  padding: 2.2rem 2.8rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  font-size: 3.2vmin;
-  white-space: nowrap;
+  background: #aa7341de;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  font-size: 5vmin;
+  color: white;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  white-space: normal;
 }
-.hidden { display: none; }
+.hidden { display: none !important }
+
+#message img {
+  display: block;
+  margin: 1rem auto 0;   
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
 
 /* Steamer (main board) */
 #steamer {
-  width: 65vmin;
-  height: 65vmin;
+  width: 80vmin;
+  height: 80vmin;
   background-image: url("img/steamer.png");
   background-size: cover;
   background-position: center;
@@ -56,13 +86,14 @@ h1 {
   display: grid;
   place-items: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  z-index: 50;
+  z-index: 0;
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Tic-tac-toe grid inside steamer */
 #grille {
-  width: 52vmin;
-  height: 52vmin;
+  width: 50vmin;
+  height: 50vmin;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -70,109 +101,138 @@ h1 {
 }
 
 #grille .case {
-  border: 1px solid rgba(0,0,0,0.25);
+  border: none;
+  background: radial-gradient(
+    circle at 50%,  
+    rgb(84 52 27 / 50%),  
+    rgb(84 52 27 / 50%) 20%,  
+    rgba(255,255,255,0) 25% );
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  transition: transform 0.14s ease, background-color 0.14s;
+  transition: transform 0.2s ease, background-color 0.14s;
 }
 
 #grille .case:hover {
-  background-color: rgba(100, 149, 237, 0.18);
-  transform: translateY(-3%);
+  transform: translateY(-3%) scale(1.1);
 }
 
-/* --- Decorations (scaled + spaced) --- */
-#steamer-lid {
+/* Decorations */
+.decor {
   position: absolute;
-  left: -15vmin;
-  top: 5vmin;
-  width: 22vmin;
+  z-index: 55;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
+}
+
+#steamer-lid {
+  left: -75vmin;
+  top: -60vmin;
+  width: 85vmin;
   transform: rotate(-20deg);
   z-index: 45;
-  pointer-events: none;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+  animation: rotate-slow 4s ease-in-out infinite alternate;
 }
 
 #chopsticks {
-  position: absolute;
-  right: -14vmin;
-  top: 12vmin;
-  width: 20vmin;
-  transform: rotate(-12deg);
-  z-index: 55;
-  pointer-events: none;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+  right: -30vmin;
+  top: -30vmin;
+  width: 40vmin;
+  transform: rotate(-30deg);
+  animation: float 3.8s ease-in-out infinite;
 }
 
 #dumplings {
-  position: absolute;
-  bottom: -8vmin;
-  left: 10vmin;
-  width: 15vmin;
-  z-index: 55;
-  pointer-events: none;
-  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
+  bottom: -25vmin;
+  right: -20vmin;
+  width: 35vmin;
+  animation: float 3.2s ease-in-out infinite;
 }
 
 #sauce {
-  position: absolute;
-  bottom: 8vmin;
-  right: 10vmin;
-  width: 10vmin;
-  z-index: 55;
-  pointer-events: none;
-  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
+  top: 2vmin;
+  right: -15vmin;
+  width: 20vmin;
+  animation: float 4s ease-in-out infinite;
 }
 
-/* 🍽️ Plate of siu-mai */
 #siumai-plate {
-  position: absolute;
-  left: -12vmin;
-  bottom: 10vmin;
-  width: 16vmin;
-  z-index: 55;
-  pointer-events: none;
-  transform: rotate(6deg);
+  left: -20vmin;
+  bottom: -25vmin;
+  width: 35vmin;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+  animation: float 3.6s ease-in-out infinite;
 }
 
 /* Replay button */
-.controls button {
+.controls {
   margin-top: 2rem;
+}
+
+.controls button {
   padding: 1rem 2rem;
-  font-size: 2vmin;
+  font-size: 4vmin;
+  font-family: 'Caveat Brush';
   border: none;
   border-radius: 1rem;
-  background-color: #ff8c42;
-  color: white;
+  background-color: #FFB358;
+  color: black;
   cursor: pointer;
   transition: background 0.18s;
 }
+
 .controls button:hover {
-  background-color: #ff6f00;
+  background-color: #fd9519;
+  animation: pulse 0.8s infinite;
 }
 
-/* Responsive tweaks */
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5%); }
+}
+
+@keyframes rotate-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(5deg); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Responsive */
 @media (min-width: 600px) {
-  h1 { font-size: 4vmin; }
+  h1 { font-size: 7vmin; }
   #table { width: 72vmin; height: 72vmin; }
   #steamer { width: 60vmin; height: 60vmin; }
-  #grille { width: 48vmin; height: 48vmin; }
-
-  #steamer-lid { left: -13vmin; top: 6vmin; width: 20vmin; }
-  #chopsticks { right: -12vmin; top: 12vmin; width: 18vmin; }
-  #siumai-plate { left: -10vmin; bottom: 8vmin; width: 17vmin; }
+  #grille { width: 35vmin; height: 35vmin; }
+  #steamer-lid { left: -48vmin; top: -30vmin; width: 60vmin; }
+  #chopsticks { right: -18vmin; top: -15vmin; width: 34vmin; }
+  #siumai-plate { left: -12vmin; bottom: -15vmin; width: 34vmin; }
+  #dumplings { right: -12vmin; bottom: -15vmin; width: 34vmin; }
+  #sauce { right: -15vmin; top: 16vmin; width: 18vmin; }
+  #turn {font-size: 5vmin;}
 }
 
 @media (min-width: 1024px) {
-  h1 { font-size: 3vmin; }
+  h1 { font-size: 6vmin; }
   #table { width: 65vmin; height: 65vmin; }
-  #steamer { width: 55vmin; height: 55vmin; }
-  #grille { width: 45vmin; height: 45vmin; }
-
-  #steamer-lid { left: -12vmin; top: 5vmin; width: 18vmin; }
-  #chopsticks { right: -11vmin; top: 10vmin; width: 16vmin; }
-  #siumai-plate { left: -9vmin; bottom: 7vmin; width: 18vmin; }
+  #steamer { width: 43vmin; height: 43vmin; }
+  #grille { width: 24vmin; height: 24vmin; }
+  #steamer-lid { left: -35vmin; top: 4vmin; width: 42vmin; }
+  #chopsticks { right: -25vmin; top: 15vmin; width: 28vmin; }
+  #siumai-plate { left: -4vmin; bottom: 7vmin; width: 20vmin; }
+  #dumplings { right: -4vmin; bottom: 7vmin; width: 20vmin; }
+  #sauce { right: -5vmin; top: 15vmin; width: 13vmin; }
+  #turn { bottom: -1vmin; font-size: 4vmin;}
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Petit Jeu Canvas</title>
+		<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen-overlay active">
+        <div class="screen-content">
+            <!-- Add your start screen image/text here -->
+            <h1>AU CŒUR DE L'HIVER</h1>
+            <button class="btn" onclick="showInstructions()">Commencer</button>
+        </div>
+    </div>
+    
+    <!-- Instruction Screen -->
+    <div id="instructionScreen" class="screen-overlay">
+        <div class="screen-content">
+            <!-- Add your instruction screen image/text here -->
+            <p>
+                Seule dans une forêt enneigée, une jeune fille cherche en hâte du bois pour allumer un feu avant que le froid ne la fige.
+            </p>
+            <button class="btn" onclick="startGame()">Commencer l'aventure</button>
+        </div>
+    </div>
+    
+    <!-- Win Screen -->
+    <div id="winScreen" class="screen-overlay">
+        <div class="screen-content">
+            <!-- Add your win screen image/text here -->
+            <h2>Seule dans la nuit, elle a trouvé la chaleur.</h2>
+            <button class="btn" onclick="restartGame()">Recommencer</button>
+        </div>
+    </div>
+    
+    <!-- Lose Screen -->
+    <div id="loseScreen" class="screen-overlay">
+        <div class="screen-content">
+            <!-- Add your lose screen image/text here -->
+            <h2>Le froid a été plus rapide qu’elle.</h2>
+            <button class="btn" onclick="restartGame()">Recommencer</button>
+        </div>
+    </div>
+
+    <nav>
+        <p id="uArrow" class="arrow"></p>
+        <p id="dArrow" class="arrow"></p>
+        <p id="lArrow" class="arrow"></p>
+        <p id="rArrow" class="arrow"></p>
+    </nav>
+    <section id="gameBox">
+		<script src="js/game.js"></script>
+	</section>
+</html>

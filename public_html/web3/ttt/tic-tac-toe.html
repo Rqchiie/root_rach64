@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+
 </head>
 <body>
   <main>
@@ -16,10 +17,20 @@
       <h1>TIC TAC BAO</h1>
     </header>
 
-    <!-- Table area (steamer + decorations). #message is inside #table so it overlays the board. -->
     <section id="table">
+      <!-- Turn indicator -->
+      <p id="turn"></p>
+    
       <!-- message overlay (hidden by default; JS toggles .hidden) -->
-      <div id="message" class="hidden" role="status" aria-live="polite"></div>
+      <div id="message" class="hidden">
+        <p id="message-text"></p>
+        <img id="message-img" src="" alt="">
+        <section class="controls">
+          <nav>
+            <button id="replay">Jouer encore</button>
+          </nav>
+        </section>
+      </div>
 
       <!-- steamer (round board) -->
       <div id="steamer">
@@ -37,19 +48,12 @@
       </div>
 
       <!-- decorations (positioned around the steamer) -->
-      <img id="steamer-lid" src="img/steamer-cover.png" alt="Steamer Lid (cover)" />
-      <img id="chopsticks" src="img/chopsticks.png" alt="Chopsticks" />
-      <img id="dumplings" src="img/plate-dumplings.png" alt="Extra dumplings" />
-      <img id="sauce" src="img/soya.png" alt="Sauce dish" />
-      <img id="siumai-plate" src="img/plate-siumai.png" alt="Plate of siu-mai" />
+      <img id="steamer-lid" class="decor" src="img/steamer-cover.png" alt="Steamer Lid (cover)" />
+      <img id="chopsticks" class="decor" src="img/chopsticks.png" alt="Chopsticks" />
+      <img id="dumplings" class="decor" src="img/plate-dumplings.png" alt="Extra dumplings" />
+      <img id="sauce" class="decor" src="img/soya.png" alt="Sauce dish" />
+      <img id="siumai-plate" class="decor" src="img/plate-siumai.png" alt="Plate of siu-mai" />
 
-    </section>
-
-    <!-- controls -->
-    <section class="controls">
-      <nav>
-        <button id="replay">Jouer encore</button>
-      </nav>
     </section>
   </main>
 
