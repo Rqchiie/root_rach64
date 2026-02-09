@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-scene keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+
+      <a-box position="-1.41417 2.35735 -3" rotation="-13.9 45 0" color="#4CC3D9" material="color: #694ad9" scale="0.79 0.79 0.79"></a-box>
+      <a-box position="-1 1.6 -5" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true"
+        color="tomato"></a-box>
+      <a-sphere position="-0.03088 1.2022 -4.76292" radius="1.25" color="#EF2D5E" material="color: #aa7942" scale="0.37 0.37 0.37"></a-sphere><a-sphere position="-0.03088 1.76506 -4.76292" radius="1.25" color="#EF2D5E" material="color: #ffffff" scale="0.33 0.33 0.33"></a-sphere><a-sphere position="-0.03088 2.32924 -4.76292" radius="1.25" color="#EF2D5E" material="color: #f4a4c0" scale="0.3 0.3 0.3"></a-sphere>
+      <a-cylinder position="1.41417 1.35631 -3" radius="0.5" height="1.5" color="#FFC65D" material="color: #94e3fe" rotation="1 0 -10.12"></a-cylinder>
+      <a-plane position="-0.03972 0.03039 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+
+      <a-assets>
+        <img id="sky" src="./img/sunset-4086848_1280.jpg">
+      </a-assets>
+      <a-sky src="#sky"></a-sky>
+
+        <a-assets>
+            <img id="texture" src="./img/ice-cream-cone.jpg">
+        </a-assets>
+
+        <!-- Basic cone. -->
+        <!-- Textured box. -->
+        <a-cone src="#texture" rotation="0 0 180" scale="0.48 1 0.48" position="-0.02 0.55 -4.77"></a-cone>
+
+        <a-assets>
+          <a-asset-item id="house" src="./models-3d/house.glb"></a-asset-item>
+        </a-assets>
+        
+        <a-entity gltf-model="./models-3d/house.glb" position="0 1.51264 -7.21"></a-entity>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <!-- Camera + cursor -->
+        <a-entity camera look-controls wasd-controls position="0 1 0">
+            <a-cursor fuse="true" fuse-timeout="500" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+            </a-cursor>
+        </a-entity>
+
+        <!-- YOUR GLB MODEL WITH ROTATION AND CLICK -->
+        <a-assets>
+            <a-asset-item id="logo" src="./models-3d/astryx.gltf"></a-asset-item>
+        </a-assets>
+        
+        <a-entity gltf-model="./models-3d/astryx.gltf" id="myLogo" position="0 1.43264 -3.62" scale="10 10 10"></a-entity>
+
+        <!-- Floor + sky -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="6" height="6" color="black"></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+
+    <script>
+        // Click to change color
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                var lastIndex = -1;
+                var COLORS = ['red', 'green', 'blue'];
+
+                this.el.addEventListener('click', function () {
+                    lastIndex = (lastIndex + 1) % COLORS.length;
+                    this.setAttribute('material', 'color', COLORS[lastIndex]);
+                    alert("Yay!");
+                });
+            }
+        });
+
+        const tree = document.querySelector('#myLogo');
+            tree.addEventListener('model-loaded', () => {
+                console.log('Logo model is loaded!');
+            });
+
+    </script>
+
+</body>
+
+</html>
