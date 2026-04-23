@@ -1,0 +1,148 @@
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+<a-scene fog="type: exponential; color: #071a33; density: 0.004" shadow="type: pcfsoft" light="defaultLightsEnabled: false">
+
+    <!-- Ambient light -->
+    <a-entity light="type: ambient; color: #111; intensity: 0.2"></a-entity> 
+
+    <!-- Fixed camera with cursor -->
+    <a-entity camera look-controls wasd-controls="acceleration: 50; enabled: true" position="-6.26 4.21 1.05"
+        rotation="-0.23 -91.67 0">
+        <a-entity cursor="rayOrigin: mouse" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015"
+            material="color: white; shader: flat" position="0 0 -1">
+        </a-entity>
+    </a-entity>
+
+    <!-- Assets -->
+    <a-assets>
+        <img id="ocean-sky" src="./img/ocean-sky.jpg">
+        <img id="ocean-texture" src="./img/ocean.jpg">
+    </a-assets>
+
+    <!-- Sky -->
+    <a-sky src="#ocean-sky" position="0 291.05495 0"></a-sky>
+
+    <!-- Ocean Plane -->
+    <a-plane src="#ocean-texture"
+             width="500" height="500"
+             rotation="-90 0 0"
+             material="color: #4CA6FF; opacity: 0.7; metalness: 0.2; roughness: 0.8"
+             shadow="receive: true">
+    </a-plane>
+
+    <!-- Boat 1 (static) -->
+    <a-gltf-model src="./models/sail-boat.glb"
+                   id="boat1"
+                   position="0 2.5 0"
+                   scale="4 4 4"
+                   shadow="cast: true; receive: true">
+    </a-gltf-model>
+
+    <!-- Boat 2 (click to move) -->
+    <a-gltf-model src="./models/sail-boat.glb" id="boat2" position="75.735 4.01266 168.257" scale="4 6 4" shadow=""
+        cursor-listener="" gltf-model="./models/sail-boat.glb"
+        animation="dur: 7000; easing: linear; property: position; to: 90 -0.872 168.257">
+    
+        <!-- Lantern attached to Boat 2 -->
+        <a-entity light="color: #ffddaa; decay: 2; distance: 25; intensity: 6; type: point; castShadow: true"
+            position="-2.44 1.87 0" scale="2 4 2">
+            <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa" position="1.38738 -0.55097 0.05933"
+                scale="0.51 0.79 0.95"></a-sphere>
+        </a-entity>
+    
+    </a-gltf-model>
+
+    <!-- Lantern -->
+    <a-entity id="lantern" light="color: #ffddaa; decay: 2; distance: 25; intensity: 10; type: point; castShadow: true"
+        position="-2.44 1.87 0" scale="2 4 2">
+        <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa"></a-sphere>
+    </a-entity><a-entity id="lantern-2"
+        light="color: #ffddaa; decay: 2; distance: 25; intensity: 10; type: point; castShadow: true"
+        position="-23.4837 2.19 0" scale="2 4 2">
+        <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa"></a-sphere>
+    </a-entity><a-entity id="lantern-3"
+        light="color: #ffddaa; decay: 2; distance: 25; intensity: 13.17; type: point; castShadow: true"
+        position="18.82873 3.90244 -6.81132" scale="2 4 2">
+        <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa"></a-sphere>
+    </a-entity><a-entity id="lantern-4"
+        light="color: #ffddaa; decay: 2; distance: 25; intensity: 10; type: point; castShadow: true"
+        position="21.52397 14.06532 -5.53079">
+        <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa" position="-0.13 0.3 0"></a-sphere>
+    </a-entity><a-entity id="lantern-5"
+        light="color: #ffddaa; decay: 2; distance: 25; intensity: 7.86; type: point; castShadow: true"
+        position="-0.13025 12.12052 -0.0754">
+    
+    </a-entity><a-entity id="lantern-6"
+        light="color: #ffddaa; decay: 2; distance: 25; intensity: 6; type: point; castShadow: true"
+        position="-20.81644 12.56319 -0.0854">
+        <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa" position="-0.38271 0.05 -0.66891"></a-sphere>
+    </a-entity><a-entity id="lantern-7"
+        light="color: #ffddaa; decay: 2; distance: 25; intensity: 15; type: point; castShadow: true"
+        position="0.44356 12.67319 -0.0754" rotation="0 17.22483019501794 0">
+        <a-sphere radius="0.2" color="#ffddaa" emissive="#ffddaa" position="-0.47271 -0.22 0.01109"
+            rotation="-0.10657014989433312 12.470426411022368 0.9763200829029227"></a-sphere>
+    </a-entity>
+
+    <!-- Stars -->
+    <a-entity id="stars">
+        <a-sphere position="-30 60 -20" radius="0.15" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:2; dir:alternate; dur:600; loop:true"></a-sphere>
+        <a-sphere position="25 50 15" radius="0.2" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.1; to:2.5; dir:alternate; dur:700; loop:true"></a-sphere>
+        <a-sphere position="-20 70 40" radius="0.12" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:1.8; dir:alternate; dur:500; loop:true"></a-sphere>
+        <a-sphere position="10 65 -35" radius="0.18" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.1; to:2; dir:alternate; dur:650; loop:true"></a-sphere>
+        <a-sphere position="40 55 50" radius="0.22" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.2; to:2.5; dir:alternate; dur:750; loop:true"></a-sphere>
+        <a-sphere position="-15 40 65" radius="0.12" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:1.8; dir:alternate; dur:600; loop:true"></a-sphere>
+        <a-sphere position="0 80 -45" radius="0.2" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.1; to:2; dir:alternate; dur:700; loop:true"></a-sphere>
+        <a-sphere position="20 75 25" radius="0.16" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:2; dir:alternate; dur:750; loop:true"></a-sphere>
+        <a-sphere position="-35 60 5" radius="0.14" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:1.9; dir:alternate; dur:650; loop:true"></a-sphere>
+        <a-sphere position="30 85 -15" radius="0.18" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:2; dir:alternate; dur:700; loop:true"></a-sphere>
+
+        <a-sphere position="-25 55 -30" radius="0.15" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:2; dir:alternate; dur:600; loop:true"></a-sphere>
+        <a-sphere position="15 70 35" radius="0.2" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.1; to:2.5; dir:alternate; dur:700; loop:true"></a-sphere>
+        <a-sphere position="-10 65 20" radius="0.12" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:1.8; dir:alternate; dur:500; loop:true"></a-sphere>
+        <a-sphere position="5 50 -25" radius="0.18" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.05; to:2; dir:alternate; dur:650; loop:true"></a-sphere>
+        <a-sphere position="35 60 45" radius="0.22" color="#fff" emissive="#fff"
+            animation="property: components.material.material.emissiveIntensity; from:0.2; to:2.5; dir:alternate; dur:750; loop:true"></a-sphere>
+    </a-entity>
+
+    <a-sound src="#oceanSound" autoplay="true" loop="true" volume="0.4" position="0 2 0"></a-sound>
+    
+    <a-assets>
+        <audio id="oceanSound" src="./audio/crab_audio-deep-ocean-279459.mp3"></audio>
+    </a-assets>
+
+    <!-- Component to move boat on click -->
+    <script>
+        AFRAME.registerComponent('cursor-listener', {
+            init: function () {
+                this.el.addEventListener('click', () => {
+                    this.el.setAttribute('animation', {
+                        property: 'position',
+                        to: '500 -0.872 168.257',  // only Z changes, X/Y stay the same
+                        dur: 10000,
+                        easing: 'linear'
+                    });
+                });
+            }
+        });
+    </script>
+
+</a-scene>
+</body>
+</html>

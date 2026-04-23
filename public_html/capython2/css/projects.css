@@ -1,0 +1,183 @@
+/* ─── PROJECTS: HERO MOSAIC ──────────────────── */
+.projects-hero {
+  background: var(--teal);
+  padding: 1.5rem;
+  overflow: hidden;
+
+  background-image: url('../img/blue back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.mosaic-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--green);
+  display: block;
+}
+
+/* Mosaic layout — matching the wireframe pattern */
+.mosaic-img--1 {
+  grid-column: 1;
+  grid-row: 1;
+  aspect-ratio: 1;
+  background: var(--pink);
+}
+
+.mosaic-img--2 {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  aspect-ratio: 1 / 2;
+  background: var(--green);
+}
+
+.mosaic-img--3 {
+  grid-column: 3;
+  grid-row: 1;
+  aspect-ratio: 1;
+  background: var(--green);
+}
+
+.mosaic-img--4 {
+  grid-column: 4;
+  grid-row: 1;
+  aspect-ratio: 1;
+  background: var(--pink);
+}
+
+.mosaic-img--5 {
+  grid-column: 1;
+  grid-row: 2;
+  aspect-ratio: 1;
+  background: var(--green);
+}
+
+.mosaic-img--6 {
+  grid-column: 3;
+  grid-row: 2;
+  aspect-ratio: 1;
+  background: var(--pink);
+}
+
+.mosaic-img--7 {
+  grid-column: 4;
+  grid-row: 2;
+  aspect-ratio: 1;
+  background: var(--green);
+}
+
+/* ─── PROJECTS: GRID ─────────────────────────── */
+.projects-grid-section {
+  background: var(--pink);
+  padding: 2.5rem 1.5rem;
+
+  background-image: url('../img/pink back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.projects-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(47,84,107,0.12);
+}
+
+.project-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.project-card-img a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-card-img a:hover img {
+  transform: scale(1.04);
+}
+
+.project-card-body {
+  padding: 0.6rem 0.8rem 0.8rem;
+}
+
+.project-card-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem;
+  color: var(--teal);
+  margin-bottom: 0.2rem;
+}
+
+.project-card-body p {
+  font-size: 0.72rem;
+  color: var(--teal);
+  opacity: 0.6;
+  line-height: 1.5;
+}
+
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.project-meta time {
+  font-size: 0.72rem;
+  color: var(--teal);
+  opacity: 0.5;
+}
+
+/* ─── DESKTOP ────────────────────────────────── */
+@media (min-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects-hero { padding: 2rem 2.5rem; }
+
+  .mosaic { gap: 0.75rem; }
+
+  .projects-grid-section { padding: 3.5rem 2.5rem; }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+}

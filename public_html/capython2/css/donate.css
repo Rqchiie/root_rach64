@@ -1,0 +1,175 @@
+.donation-section { background: var(--navy); }
+
+.donation-layout {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* impact panel moves below form on mobile */
+@media (min-width: 768px) {
+  .donation-layout {
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+    gap: 3rem;
+  }
+}
+
+/* ── AMOUNT PICKER ────────────────────────────────────────── */
+.amount-label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.amount-btn {
+  padding: 0.7rem 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  min-height: 44px; /* tap target */
+  text-align: center;
+}
+.amount-btn:hover { background: rgba(245,183,0,0.08); border-color: rgba(245,183,0,0.4); }
+.amount-btn.active {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+  font-weight: 800;
+}
+
+/* ── FORM ─────────────────────────────────────────────────── */
+.donate-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.field label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+.field input {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background 0.2s;
+  /* full width, no overflow */
+  width: 100%;
+  min-height: 44px; /* tap target */
+}
+.field input::placeholder { color: rgba(255,255,255,0.2); }
+.field input:focus {
+  outline: none;
+  border-color: rgba(245,183,0,0.5);
+  background: rgba(245,183,0,0.04);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+/* stack on very small screens */
+@media (max-width: 380px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.donate-form .btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.72rem;
+  padding: 1rem;
+  margin-top: 0.25rem;
+}
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.2);
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 1.6;
+}
+.secure-badge svg { width: 13px; height: 13px; flex-shrink: 0; color: rgba(245,183,0,0.4); }
+
+/* ── IMPACT SIDE ──────────────────────────────────────────── */
+.impact-side {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  background: var(--navy-mid);
+  /* sticky on desktop so it follows scroll */
+}
+@media (min-width: 768px) {
+  .impact-side { position: sticky; top: 100px; }
+}
+
+.impact-side h3 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.impact-side .sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+.impact-list {
+  display: grid;
+  gap: 0;
+}
+.impact-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(245,183,0,0.1);
+}
+.impact-item:last-child { border-bottom: none; }
+
+.impact-amt {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1.1;
+  padding-top: 0.1rem;
+}
+.impact-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.75;
+}

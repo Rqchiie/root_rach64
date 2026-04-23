@@ -1,0 +1,592 @@
+/* ─── AGENCY: HERO ───────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  background-image: url('../img/blue back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--teal); /* fallback */
+}
+
+.hero-text {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 6vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--green);
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--green);
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--green);
+  opacity: 0.9;
+  max-width: 60ch;
+}
+
+.hero-media {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── AGENCY: SERVICES ───────────────────────── */
+.services {
+  background: var(--pink);
+}
+
+.services-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
+.services-logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  padding-top: 60px;
+  align-self: start;
+}
+
+.services-logo-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.services-content {
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  background-image: url('../img/pink.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.services-left {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+}
+
+.services-header {
+  margin-bottom: 1rem;
+}
+
+.services-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.services-header p {
+  font-size: 0.88rem;
+  opacity: 0.75;
+  line-height: 1.7;
+  max-width: 62ch;
+}
+
+.services-list-group {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.services-list-group h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.services-list-group p {
+  font-size: 0.84rem;
+  opacity: 0.7;
+  line-height: 1.6;
+  max-width: 38ch;
+}
+
+.service-item {
+  border-top: 1px solid rgba(47,84,107,0.15);
+  padding: 0.9rem 0;
+}
+
+.service-item:first-child { border-top: none; padding-top: 0; }
+
+.service-item-full {
+  border-top: 1px solid rgba(47,84,107,0.15);
+  padding-top: 2rem;
+}
+
+.service-item-full h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.service-item-full p {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  opacity: 0.75;
+  max-width: 68ch;
+}
+
+/* ─── AGENCY: WHO WE DO IT FOR ───────────────── */
+.work {
+  padding: 3rem 1.5rem;
+  background: var(--light-green);
+  color: var(--text);
+}
+
+.work > header { margin-bottom: 0.5rem; }
+
+.work > header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.work-intro {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  max-width: 60ch;
+}
+
+.work-gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.work-gallery li {
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(140, 230, 88, 0.062);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.work-clients {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.work-client-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(93, 134, 69, 0.06);
+  border-radius: 14px;
+  border: 1px solid rgba(47,84,107,0.1);
+  transition: background 0.2s;
+}
+
+.work-client-item:hover { background: rgba(47,84,107,0.12); }
+
+.client-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--pink);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.client-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--teal);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.client-label {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.client-label em {
+  display: block;
+  font-style: normal;
+  opacity: 0.55;
+  font-size: 0.85rem;
+}
+
+/* ─── AGENCY: VALUES + BRAND ─────────────────── */
+.values-feature {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
+.values-text {
+  padding: 3rem 1.5rem;
+  background: var(--teal);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-image: url('../img/blue.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.values-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--white);
+}
+
+.values-text p {
+  font-size: 0.88rem;
+  opacity: 0.82;
+  max-width: 60ch;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+.brand-panel {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Font showcase */
+.font-showcase {
+  width: 100%;
+  padding: 2rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(47,84,107,0.08);
+}
+
+.font-showcase-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(47,84,107,0.06);
+}
+
+.font-showcase-row:last-child { border-bottom: none; }
+
+.font-showcase dt.font-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.35;
+  font-weight: 400;
+  flex-shrink: 0;
+  width: 4.5rem;
+}
+
+.font-showcase .font-name-title {
+  /* font-family: 'Playfair Display', serif;
+  font-style: italic;
+  */
+
+  font-family: "Are You Serious", cursive;
+  font-size: 4rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  color: var(--text);
+}
+
+.font-showcase .font-name-serif {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text);
+}
+
+.font-showcase .font-name-sans {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  opacity: 0.55;
+}
+
+/* Color swatches */
+.color-swatches {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid rgba(47,84,107,0.08);
+  flex-wrap: wrap;
+}
+
+.swatch-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.color-swatches img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 18px rgba(47,84,107,0.14);
+}
+
+.swatch-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.38;
+  font-weight: 400;
+}
+
+/* Feature gallery — tall capsule pills */
+.feature-gallery {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.feature-gallery li {
+  overflow: hidden;
+  border-radius: 999px;
+  flex: 1;
+  max-width: 30%;
+  box-shadow: 0 4px 18px rgba(47,84,107,0.14);
+}
+
+.feature-gallery li:nth-child(2) { transform: translateY(-14px); }
+
+.feature-gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.feature-gallery li:hover img { transform: scale(1.06); }
+
+/* ─── AGENCY: TEAM ───────────────────────────── */
+.team {
+  padding: 3rem 1.5rem;
+  background: var(--pink);
+
+  background-image: url('../img/pink back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.team > header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.team-intro {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  /* max-width: 60ch; */
+}
+
+.team-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.team-list figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-list img {
+  width: 55%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 0.75rem;
+  background: rgba(255,255,255,0.5);
+}
+
+.team-list figcaption {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.team-list figcaption span {
+  display: block;
+  font-weight: 450;
+  font-size: 0.78rem;
+  opacity: 0.65;
+  margin-top: 0.1rem;
+}
+
+/* ─── TEAM DELIVERABLES ──────────────────────── */
+.team-deliverables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+
+.team-deliverable-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 1rem;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.team-deliverable-item:hover {
+  background: rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.team-deliverable-item svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--teal);
+}
+.team-deliverable-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.team-deliverable-sub {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  opacity: 0.4;
+}
+
+/* ─── CAPYSKILLS LINK ────────────────────────── */
+.capyskills-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.capyskills-link:hover { opacity: 1; }
+
+/* ─── DESKTOP ────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+
+  .hero-text { padding: 4rem 2.5rem; }
+
+  .hero-media img { height: 400px; }
+
+  .services-inner { grid-template-columns: 5fr 3fr; }
+
+  .services-logo-grid img { height: 280px; }
+
+  .services-content { padding: 3rem 2.5rem; }
+
+  .services-header { margin-bottom: 1.5rem; }
+
+  .work { padding: 3.5rem 2.5rem; }
+
+  .work-gallery { grid-template-columns: repeat(4, 1fr); }
+
+  .values-feature { grid-template-columns: 1fr 1fr; }
+
+  .values-text { padding: 3.5rem 2.5rem; }
+
+  .font-showcase { padding: 2.5rem 2.5rem 2rem; }
+
+  .color-swatches { padding: 2rem 2.5rem; gap: 2rem; }
+
+  .color-swatches img { width: 80px; height: 80px; }
+
+  .feature-gallery { padding: 2rem 2.5rem 2.5rem; gap: 1.2rem; }
+
+  .feature-gallery img { height: 380px; }
+
+  .feature-gallery li:nth-child(2) { transform: translateY(-18px); }
+
+  .team { padding: 3.5rem 2.5rem; }
+
+  .team-list { grid-template-columns: repeat(5, 1fr); }
+}

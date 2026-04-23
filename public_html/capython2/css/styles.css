@@ -1,0 +1,231 @@
+/* ─── RESET ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0; }
+img, video { display: block; max-width: 100%; }
+figure { margin: 0; }
+header, nav, main, section, article, aside, footer { display: block; }
+
+html {background-color: var(--teal);}
+
+/* ─── TOKENS (agency colors are official) ───── */
+:root {
+  --teal:      #335469;
+  --teal-dark: #1e3a4f;
+  --green:     #98AE68;
+  --pink:      #F2D6DF;
+  --pink-mid:  #d4b3c0;
+  --light-green:#dcf1b9;
+  --cream:     #faf7f4;
+  --text:      #1f2f36;
+  --white:     #ffffff;
+}
+
+/* ─── BASE ──────────────────────────────────── */
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cream);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+/* ─── HEADER ────────────────────────────────── */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--teal);
+  border-bottom: 3px solid var(--green);
+
+  /* sticky + smooth hide/show */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+/* Active nav link */
+.site-header nav a.active {
+  color: var(--pink);
+  opacity: 1;
+}
+
+.site-header .logo-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.site-header .logo {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.site-header .logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.site-header nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.site-header nav a:hover {
+  color: var(--pink);
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 2.5rem;
+  }
+}
+
+/* ─── SHARED BUTTON ─────────────────────────── */
+.cta-btn {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  color: var(--white);
+  background: var(--green);
+}
+
+.cta-btn:hover {
+  opacity: 0.82;
+  transform: translateY(-2px);
+}
+
+.cta-btn--green {
+  color: var(--teal);
+  background: var(--green);
+}
+
+/* ─── FOOTER ────────────────────────────────── */
+.site-footer {
+  background: var(--teal);
+  border-top: 1px solid rgba(152,174,104,0.2);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: 0.82rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand img { 
+  height: 32px; 
+  width: auto;
+  transform: rotate(-270deg)
+}
+
+.footer-brand p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--green);
+  font-size: 0.88rem;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-contact-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--green);
+  font-size: 0.88rem;
+}
+
+.footer-socials ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
+}
+
+.footer-socials a {
+  color: var(--green);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.footer-socials a:hover { opacity: 1; }
+
+.footer-socials svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+/* ─── PAGE LOAD ANIMATION ───────────────────── */
+@keyframes pageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: pageFadeUp 0.5s ease both;
+}

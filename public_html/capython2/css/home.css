@@ -1,0 +1,125 @@
+/* ─── HOME: HERO ─────────────────────────────── */
+/* mobile first: single column */
+.hero {
+  background: var(--teal);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1.5rem 1.5rem 0;
+  gap: 1.5rem;
+  align-items: center;
+  animation: fadeUp 0.8s ease both;
+
+  background-image: url('../img/blue back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.2rem, 8vw, 3.8rem);
+  color: var(--green);
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
+  color: var(--green);
+}
+
+/* VIDEO — flush at bottom, rounded top corners */
+.hero-video {
+  position: relative;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.hero-video::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(5 91 121 / 15%);
+  pointer-events: none;
+  border-radius: 12px 12px 0 0;
+}
+
+.hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.2);
+  opacity: 0.85;
+  mask-image: radial-gradient(ellipse 80% 85% at 50% 50%,
+      black 50%,
+      transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 85% at 50% 50%,
+      black 50%,
+      transparent 100%);
+}
+
+/* ─── HOME: ABOUT (PINK) ─────────────────────── */
+.about {
+  background: var(--pink);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  animation: fadeUp 0.8s 0.15s ease both;
+
+  background-image: url('../img/pink back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about h2 {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--black);
+  margin-bottom: 1.2rem;
+}
+
+.about p {
+  font-size: 0.92rem;
+  color: var(--black);
+  opacity: 0.72;
+  max-width: 48ch;
+  margin: 0 auto 2.5rem;
+  line-height: 1.9;
+}
+
+
+/* ─── DESKTOP ────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 2.5rem 0;
+    gap: 2rem;
+  }
+
+  .hero-text { padding-bottom: 2rem; }
+
+  /* .hero-video { border-radius: 16px 16px 0 0; } */
+
+  .video-placeholder {
+    height: 368px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .about { padding: 5rem 2.5rem; }
+}

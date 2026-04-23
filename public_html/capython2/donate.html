@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — Stars of Hope</title>
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/donate.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Stars of Hope Home">
+      <img src="./img/stars-blue-logo.png" alt="Stars of Hope logo" />
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="./stars-of-hope.html">Home</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+        <li><a href="donate.html" aria-current="page">Donate</a></li>
+      </ul>
+      <p class="nav-mobile-cta">
+        <a href="tickets.html" class="btn btn-primary" style="display:block;text-align:center">Get Tickets</a>
+      </p>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="tickets.html" class="btn btn-primary header-cta">Get Tickets</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero" aria-labelledby="donation-heading">
+    <span class="label">Montreal Children's Hospital Foundation</span>
+    <h1 id="donation-heading">
+      <span class="script">Make a Difference</span>
+      Your gift<br>changes lives.
+    </h1>
+    <p>Every dollar donated goes directly to care, research, and support programs at the Montreal Children's Hospital.</p>
+  </section>
+
+  <section class="donation-section section" aria-label="Donation form">
+    <div class="container">
+      <div class="donation-layout">
+
+        <div class="donation-form-col">
+          <span class="amount-label">Select an Amount</span>
+          <div class="amount-grid" role="group" aria-label="Donation amount options">
+            <button class="amount-btn" type="button" onclick="selectAmt(this)">$25</button>
+            <button class="amount-btn active" type="button" onclick="selectAmt(this)">$50</button>
+            <button class="amount-btn" type="button" onclick="selectAmt(this)">$100</button>
+            <button class="amount-btn" type="button" onclick="selectAmt(this)">$250</button>
+            <button class="amount-btn" type="button" onclick="selectAmt(this)">$500</button>
+            <button class="amount-btn" type="button" onclick="selectAmt(this)">Other</button>
+          </div>
+          <form class="donate-form" id="donate-form" novalidate>
+            <div class="field">
+              <label for="custom-amt">Custom Amount (CA$)</label>
+              <input type="number" id="custom-amt" placeholder="Enter your amount" min="1" />
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="d-first">First Name</label>
+                <input type="text" id="d-first" placeholder="Marie" required autocomplete="given-name" />
+              </div>
+              <div class="field">
+                <label for="d-last">Last Name</label>
+                <input type="text" id="d-last" placeholder="Tremblay" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="d-email">Email Address</label>
+              <input type="email" id="d-email" placeholder="marie@example.com" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="d-card">Card Number</label>
+              <input type="text" id="d-card" placeholder="&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;" autocomplete="cc-number" inputmode="numeric" />
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="d-exp">Expiry</label>
+                <input type="text" id="d-exp" placeholder="MM / YY" autocomplete="cc-exp" />
+              </div>
+              <div class="field">
+                <label for="d-cvv">CVV</label>
+                <input type="text" id="d-cvv" placeholder="&bull;&bull;&bull;" autocomplete="cc-csc" inputmode="numeric" maxlength="4" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Donate Now</button>
+            <p class="secure-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Secured with SSL &middot; Tax receipt issued &middot; Charitable reg. #10000 1234 RR0001
+            </p>
+          </form>
+        </div>
+
+        <aside class="impact-side" aria-label="Donation impact">
+          <span class="label">Your Impact</span>
+          <h3>See what your<br><em>gift makes possible.</em></h3>
+          <p class="sub">Every contribution directly improves the lives of children and families at the Montreal Children's Hospital.</p>
+          <dl class="impact-list">
+            <div class="impact-item">
+              <dt class="impact-amt">$25</dt>
+              <dd class="impact-desc">Provides comfort kits for children during overnight hospital stays</dd>
+            </div>
+            <div class="impact-item">
+              <dt class="impact-amt">$50</dt>
+              <dd class="impact-desc">Funds interpreter services for a family in one of our 47 languages</dd>
+            </div>
+            <div class="impact-item">
+              <dt class="impact-amt">$100</dt>
+              <dd class="impact-desc">Supports one hour of pediatric research at The Children's</dd>
+            </div>
+            <div class="impact-item">
+              <dt class="impact-amt">$250</dt>
+              <dd class="impact-desc">Helps equip a treatment room with the latest medical technology</dd>
+            </div>
+            <div class="impact-item">
+              <dt class="impact-amt">$500</dt>
+              <dd class="impact-desc">Sponsors a full day of care for a child in our specialized units</dd>
+            </div>
+          </dl>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <address class="footer-brand">
+      <img src="./img/logo3.PNG" alt="Stars of Hope logo" />
+      <div>
+        <p class="footer-name">Stars of Hope — Les Etoiles d'Espoir</p>
+        <p class="footer-copy">&copy; 2025 Montreal Children's Hospital Foundation</p>
+      </div>
+    </address>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Social media">
+      <ul class="footer-social">
+        <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></li>
+        <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+<aside class="blume-bar">
+  <p>Campaign strategy, design and digital execution by <a href="./home.html" target="_blank" rel="noopener">Blume.co</a>,
+    Event fundraising specialists</p>
+</aside>
+
+<script>
+  function selectAmt(btn) {
+    document.querySelectorAll('.amount-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
+  document.getElementById('donate-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your generous donation to the Montreal Children\'s Hospital Foundation!');
+  });
+</script>
+<script src="./js/scripts.js"></script>
+<script src="./js/lang.js"></script>
+</body>
+</html>

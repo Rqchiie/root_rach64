@@ -1,0 +1,155 @@
+/* ── HERO ─────────────────────────────────────────────────── */
+.found-hero {
+  background: linear-gradient(160deg, #0f2a71 0%, #001740 60%, #000d25 100%);
+  padding: 3.5rem 1.25rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.found-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(245,183,0,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.found-hero-inner {
+  max-width: 1000px;
+  margin-inline: auto;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+.found-hero-content h1 {
+  font-size: clamp(2rem, 9vw, 4rem);
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+.found-hero-content h1 em { color: var(--gold); font-style: italic; }
+.found-hero-content p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-top: 0.75rem;
+}
+
+.found-logo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+.found-logo-col img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+.found-logo-col figcaption {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 1rem;
+  color: var(--cream);
+  opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+  .found-hero { padding: 5rem 1.25rem 4rem; }
+  .found-hero-inner { grid-template-columns: 1fr auto; gap: 3rem; }
+  .found-logo-col img { max-width: 220px; }
+}
+
+/* ── MISSION ──────────────────────────────────────────────── */
+.found-body { background: var(--navy); }
+.found-body-inner {
+  max-width: 680px;
+  margin-inline: auto;
+}
+.found-body-inner h2 {
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.found-body-inner p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.95;
+  margin-bottom: 1rem;
+}
+.found-quote {
+  border-left: 2px solid var(--gold);
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  margin-block: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+/* ── VALUES ───────────────────────────────────────────────── */
+.found-values { background: linear-gradient(160deg, #0f2a71 0%, #001f5e 100%); }
+.values-grid {
+  display: grid;
+  gap: 1rem;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+@media (min-width: 480px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .values-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.v-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  background: rgba(0,5,30,0.5);
+  transition: border-color 0.2s, background 0.2s;
+}
+.v-card:hover { border-color: rgba(245,183,0,0.3); background: rgba(0,20,60,0.6); }
+.v-card .card-icon { margin-bottom: 0.8rem; color: var(--gold); }
+.v-card .card-icon svg { width: 24px; height: 24px; }
+.v-card h3 { font-size: 1rem; color: var(--gold); font-weight: 400; margin-bottom: 0.4rem; }
+.v-card p  { font-size: 0.8rem; color: var(--muted); line-height: 1.8; }
+
+/* ── LANGUAGES ────────────────────────────────────────────── */
+.lang-section { background: var(--navy); }
+.lang-section h3 {
+  font-size: clamp(1.6rem, 6vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.lang-section > .container > p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  max-width: 52ch;
+}
+
+.lang-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.lang-chip {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  background: rgba(245,183,0,0.08);
+  border: 1px solid rgba(245,183,0,0.2);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  transition: background 0.2s, border-color 0.2s;
+  /* ensure tap-friendly size */
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+.lang-chip:hover {
+  background: rgba(245,183,0,0.15);
+  border-color: rgba(245,183,0,0.4);
+}
