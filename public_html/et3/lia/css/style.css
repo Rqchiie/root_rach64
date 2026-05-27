@@ -1,0 +1,115 @@
+/* Remove default spacing on everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark background for the whole page */
+body {
+  background: #05081a;
+  color: white;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+/* Canvas fills the whole screen */
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Both panels share these basic styles */
+.panel {
+  position: fixed;
+  top: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+
+  /* Sit on top of the canvas */
+  z-index: 10;
+}
+
+/* Left panel goes on the left */
+.left-panel {
+  left: 20px;
+}
+
+/* Right panel goes on the right */
+.right-panel {
+  right: 20px;
+  text-align: center;
+}
+
+/* Main title */
+h1 {
+  font-size: 14px;
+  color: #00ffff;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+/* Small grey subtitle */
+.subtitle {
+  font-size: 10px;
+  color: grey;
+  margin-bottom: 16px;
+}
+
+/* Section headings */
+h2 {
+  font-size: 10px;
+  color: #00ffff;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  margin-top: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+/* List items */
+ul {
+  list-style: none;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 2;
+}
+
+/* Keyboard key badges */
+.key {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: #00ffff;
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+/* Right panel labels */
+.label {
+  font-size: 9px;
+  color: grey;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+/* Mode name (big text) */
+#modeName {
+  font-size: 20px;
+  color: #00ffff;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+/* Mode description */
+#modeDesc {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}

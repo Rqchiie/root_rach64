@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Playground</title>
+
+  <!-- Google Fonts — Orbitron looks futuristic/tech, Space Mono is clean -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- Full screen canvas for particles -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Flash overlay — covers the screen white briefly when switching modes -->
+  <div id="flash"></div>
+
+  <!-- Left panel -->
+  <div class="panel left-panel">
+
+    <h1>Visual Playground</h1>
+    <p class="subtitle">AN INTERACTIVE EXPERIENCE</p>
+
+    <h2>HOW TO PLAY</h2>
+
+    <ul>
+      <li><span class="dot"></span> Move mouse → trails</li>
+      <li><span class="dot"></span> Click → explosion</li>
+      <li><span class="dot"></span> Hold mouse → attract</li>
+    </ul>
+
+    <h2>PRESS KEYS</h2>
+
+    <ul>
+      <li><span class="key">1</span> Calm</li>
+      <li><span class="key">2</span> Chaos</li>
+      <li><span class="key">3</span> Galaxy</li>
+      <li><span class="key">4</span> Flow</li>
+      <li><span class="key">C</span> Color</li>
+      <li><span class="key">R</span> Reset</li>
+    </ul>
+
+  </div>
+
+  <!-- Right panel -->
+  <div class="panel right-panel" id="rightPanel">
+
+    <p class="label">CURRENT MODE</p>
+
+    <!-- The bar under the mode name — glows in the mode color -->
+    <div class="mode-bar" id="modeBar"></div>
+
+    <p id="modeName">CALM</p>
+    <p id="modeDesc">Smooth and relaxed.</p>
+
+  </div>
+
+  <script src="./js/script.js"></script>
+
+</body>
+</html>
